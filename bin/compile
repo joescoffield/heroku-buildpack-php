@@ -408,6 +408,8 @@ erb conf/site.conf.erb > /app/vendor/nginx/conf/site.conf
 mkdir -p /app/vendor/nginx/logs
 mkdir -p /app/vendor/php/var/log
 mkdir -p /app/vendor/php/run
+mkdir -p /var/log/symfony/pastajar_app
+chmod 0777 -R /var/log/symfony/pastajar_app
 
 touch /app/vendor/nginx/logs/access.log \
       /app/vendor/nginx/logs/error.log
