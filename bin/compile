@@ -408,7 +408,7 @@ erb conf/site.conf.erb > /app/vendor/nginx/conf/site.conf
 mkdir -p /app/vendor/nginx/logs
 mkdir -p /app/vendor/php/var/log
 mkdir -p /app/vendor/php/run
-/v
+
 touch /app/vendor/nginx/logs/access.log \
       /app/vendor/nginx/logs/error.log
 
