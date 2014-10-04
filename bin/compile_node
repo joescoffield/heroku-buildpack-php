@@ -73,6 +73,12 @@ if test -d $cache_dir; then
   test -d $cache_dir/node_modules && cp -r $cache_dir/node_modules $build_dir/
 fi
 
+# Install sass before executing npm install.
+status "Installing Sass"
+gem install sass
+GEM_BINS=`gem environment | grep "EXECUTABLE DIRECTORY" | awk -F ':' '{gsub(/ /, "", $2); print $2}'`
+PATH=$GEM_BINS:$PATH
+
 status "Installing dependencies"
 npm install --production 2>&1 | indent
 
